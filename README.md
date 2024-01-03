@@ -16,6 +16,14 @@ The full Tutorial can be found on [Medium](https://sabapathy7.medium.com/how-to-
 
 - **Closures for Flexibility:** Customize your networking calls with closures, providing a flexible and modular approach to handle responses, errors, and more.
 
+## Examples
+
+    public protocol Networkable {
+       func sendRequest<T: Decodable>(endpoint: EndPoint) async throws -> T
+       func sendRequest<T: Decodable>(endpoint: EndPoint, resultHandler: @escaping (Result<T, NetworkError>) -> Void)
+       func sendRequest<T: Decodable>(endpoint: EndPoint, type: T.Type) -> AnyPublisher<T, NetworkError>
+    }
+
 ### Installation
 
 Simply add NetworkKit to your project using Swift Package Manager - https://github.com/sabapathyk7/NetworkKit.git
