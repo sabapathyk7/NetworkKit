@@ -4,7 +4,7 @@ Elevate your iOS app's connectivity with NetworkKit – a powerful network layer
 
 The full Tutorial can be found on [Medium](https://sabapathy7.medium.com/how-to-create-a-network-layer-for-your-ios-app-623f99161677)
 
-<img src= "https://github.com/sabapathyk7/NetworkKit/assets/40764138/2727acdc-a524-4806-8f33-7a691a5c8296" height = 550> 
+Please take a look of Example usage of NetworkKit GitHub [Repo](https://github.com/sabapathyk7/iOSNetworkExample)
 
 
 ## Features
