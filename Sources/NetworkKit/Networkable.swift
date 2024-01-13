@@ -119,8 +119,9 @@ extension Networkable {
         var path = endPoint.path
         for (key, value) in endPoint.pathParams ?? [:] {
             path = path.replacingOccurrences(of: "{\(key)}", with: value)
-            urlComponents.path.append(path)
+
         }
+        urlComponents.path = path 
         var request = URLRequest(url: url)
         request.httpMethod = endPoint.method.rawValue
         request.allHTTPHeaderFields = endPoint.header
