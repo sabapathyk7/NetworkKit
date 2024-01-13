@@ -111,17 +111,18 @@ extension Networkable {
         urlComponents.path = endPoint.path
         // Adding query parameters
         urlComponents.queryItems = endPoint.queryParams?.map { URLQueryItem(name: $0.key, value: $0.value) }
-
-        guard let url = urlComponents.url else {
-            return nil
-        }
+        
         // Handling path parameters
         var path = endPoint.path
         for (key, value) in endPoint.pathParams ?? [:] {
             path = path.replacingOccurrences(of: "{\(key)}", with: value)
 
         }
-        urlComponents.path = path 
+        guard let url = urlComponents.url else {
+            return nil
+        }
+
+        urlComponents.path = path
         var request = URLRequest(url: url)
         request.httpMethod = endPoint.method.rawValue
         request.allHTTPHeaderFields = endPoint.header
