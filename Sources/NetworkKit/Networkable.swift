@@ -109,14 +109,22 @@ extension Networkable {
         urlComponents.scheme = endPoint.scheme
         urlComponents.host = endPoint.host
         urlComponents.path = endPoint.path
+        // Adding query parameters
+        urlComponents.queryItems = endPoint.queryParams?.map { URLQueryItem(name: $0.key, value: $0.value) }
+
         guard let url = urlComponents.url else {
             return nil
         }
-        let encoder = JSONEncoder()
+        // Handling path parameters
+        var path = endPoint.path
+        for (key, value) in endPoint.pathParams ?? [:] {
+            path = path.replacingOccurrences(of: "{\(key)}", with: value)
+        }
         var request = URLRequest(url: url)
         request.httpMethod = endPoint.method.rawValue
         request.allHTTPHeaderFields = endPoint.header
         if let body = endPoint.body {
+            let encoder = JSONEncoder()
             request.httpBody = try? encoder.encode(body)
         }
         return request
