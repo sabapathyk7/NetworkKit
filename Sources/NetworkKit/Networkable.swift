@@ -121,7 +121,6 @@ extension Networkable {
         guard let url = urlComponents.url else {
             return nil
         }
-        urlComponents.path = path
         var request = URLRequest(url: url)
         request.httpMethod = endPoint.method.rawValue
         request.allHTTPHeaderFields = endPoint.header
