@@ -20,10 +20,16 @@ public enum NetworkError: Error {
         switch self {
         case .decode:
             return "Decode Error"
+        case .generic:
+            return "Generic Error"
+        case .invalidURL:
+            return "Invalid URL Error"
+        case .noResponse:
+            return "No Response"
         case .unauthorized:
             return "Unauthorized URL"
-        case .generic:
-            return "Sorry, try again later"
+        case .unexpectedStatusCode:
+            return "Status Code Error"
         default:
             return "Unknown Error"
         }
