@@ -16,7 +16,7 @@ public enum NetworkError: Error {
     case unexpectedStatusCode
     case unknown
 
-    var customMessage: String {
+    public var customMessage: String {
         switch self {
         case .decode:
             return "Decode Error"

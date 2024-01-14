@@ -60,11 +60,7 @@ public final class NetworkService: Networkable {
                         continuation.resume(throwing: NetworkError.unknown)
                         return
                     }
-                    guard let jsonData = try? JSONSerialization.data(withJSONObject: data, options: []) else {
-                        continuation.resume(throwing: NetworkError.decode)
-                        return
-                    }
-                    guard let decodedResponse = try? JSONDecoder().decode(T.self, from: jsonData) else {
+                    guard let decodedResponse = try? JSONDecoder().decode(T.self, from: data) else {
                         continuation.resume(throwing: NetworkError.decode)
                         return
                     }
