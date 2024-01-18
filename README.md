@@ -12,6 +12,8 @@ GitHub Repos
 
 [SOLID Principles](https://github.com/sabapathyk7/SOLIDPrinciplesExample)
 
+[Force Update App](https://github.com/sabapathyk7/ForceUpdateExample)
+
 ## Features
 
 - **Combine Framework Integration:** Leverage the power of Combine to streamline asynchronous operations and handle complex data flows effortlessly.
