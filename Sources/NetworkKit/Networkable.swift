@@ -9,12 +9,30 @@ import Combine
 import Foundation
 
 public protocol Networkable {
+    func sendRequest<T: Decodable>(urlStr: String) async throws -> T
     func sendRequest<T: Decodable>(endpoint: EndPoint) async throws -> T
     func sendRequest<T: Decodable>(endpoint: EndPoint, resultHandler: @escaping (Result<T, NetworkError>) -> Void)
     func sendRequest<T: Decodable>(endpoint: EndPoint, type: T.Type) -> AnyPublisher<T, NetworkError>
 }
 
 public final class NetworkService: Networkable {
+    public func sendRequest<T>(urlStr: String) async throws -> T where T : Decodable {
+        guard let urlStr = urlStr as String?, let url = URL(string: urlStr) as URL?else {
+            throw NetworkError.invalidURL
+        }
+        let (data, response) = try await URLSession.shared.data(from: url)
+        guard let response = response as? HTTPURLResponse, 200...299 ~= response.statusCode else {
+            throw NetworkError.unexpectedStatusCode
+        }
+        guard let data = data as Data? else {
+            throw NetworkError.unknown
+        }
+        guard let decodedResponse = try? JSONDecoder().decode(T.self, from: data) else {
+            throw NetworkError.decode
+        }
+        return decodedResponse
+    }
+
     public func sendRequest<T>(endpoint: EndPoint, type: T.Type) -> AnyPublisher<T, NetworkError> where T: Decodable {
         guard let urlRequest = createRequest(endPoint: endpoint) else {
             precondition(false, "Failed URLRequest")
