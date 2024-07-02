@@ -35,7 +35,7 @@ public final class NetworkService: Networkable {
 
     public func sendRequest<T>(endpoint: EndPoint, type: T.Type) -> AnyPublisher<T, NetworkError> where T: Decodable {
         guard let urlRequest = createRequest(endPoint: endpoint) else {
-            precondition(false, "Failed URLRequest")
+            preconditionFailure("Failed URLRequest")
         }
         return URLSession.shared.dataTaskPublisher(for: urlRequest)
             .subscribe(on: DispatchQueue.global(qos: .background))
