@@ -1,28 +1,37 @@
-# NetworkKit
+## NetworkKit
 
-Elevate your iOS app's connectivity with NetworkKit – a powerful network layer seamlessly integrating Combine Framework, Async/Await, and Closures.
+Elevate your iOS app’s connectivity with NetworkKit – a powerful, modular network layer designed to seamlessly integrate the latest in Swift’s networking capabilities, including Combine Framework, Async/Await, and Closures.
 
-The full Tutorial can be found on [Medium](https://sabapathy7.medium.com/how-to-create-a-network-layer-for-your-ios-app-623f99161677)
+### 📖 Full Tutorial
 
-Please take a look at the Example usage of NetworkKit 
+Dive deep into NetworkKit with the [full tutorial on Medium.](https://sabapathy7.medium.com/how-to-create-a-network-layer-for-your-ios-app-623f99161677).
 
-GitHub Repos 
+### 🚀 Example Usage
 
-[iOSNetworkExample](https://github.com/sabapathyk7/iOSNetworkExample)
+Check out how to use NetworkKit in real-world applications:
 
-[SOLID Principles](https://github.com/sabapathyk7/SOLIDPrinciplesExample)
+• [iOS Network Example](https://github.com/sabapathyk7/iOSNetworkExample)
 
-[Force Update App](https://github.com/sabapathyk7/ForceUpdateExample)
+• [SOLID Principles Example](https://github.com/sabapathyk7/SOLIDPrinciplesExample)
 
-## Features
+• [Force Update App Example](https://github.com/sabapathyk7/ForceUpdateExample)
 
-- **Combine Framework Integration:** Leverage the power of Combine to streamline asynchronous operations and handle complex data flows effortlessly.
+### ✨ Features
 
-- **Async/Await Support:** Embrace modern Swift programming with async/await, simplifying asynchronous code and making your networking logic cleaner and more readable.
+**• Combine Framework Integration**
 
-- **Closures for Flexibility:** Customize your networking calls with closures, providing a flexible and modular approach to handle responses, errors, and more.
+ Leverage the power of Combine to streamline asynchronous operations and handle complex data flows effortlessly.
+ 
+**• Async/Await Support**
 
-## Examples
+Embrace modern Swift programming with async/await, simplifying asynchronous code and making your networking logic cleaner and more readable.
+
+**• Closures for Flexibility**
+
+Customize your networking calls with closures, offering a flexible and modular approach to handle responses, errors, and more.
+
+
+### 📚 Code Examples
 
     public protocol Networkable {
        func sendRequest<T: Decodable>(endpoint: EndPoint) async throws -> T
@@ -30,15 +39,16 @@ GitHub Repos
        func sendRequest<T: Decodable>(endpoint: EndPoint, type: T.Type) -> AnyPublisher<T, NetworkError>
     }
 
-### Installation
+### 🛠️ Installation
 
-Simply add NetworkKit to your project using Swift Package Manager - https://github.com/sabapathyk7/NetworkKit.git
+Add NetworkKit to your project using Swift Package Manager:
+https://github.com/sabapathyk7/NetworkKit.git
 
-## Contributions
+### 🤝 Contributions
 
- Feel free to submit issues or pull requests to enhance the functionality of NetworkKit.
+Have ideas or improvements? Feel free to submit issues or pull requests to help enhance NetworkKit.
 
-## Connect with Me
+### 🔗 Connect with Me
 
 Stay updated on the latest features and releases by following me on [LinkedIn](https://www.linkedin.com/in/sabapathy7/).
 
