@@ -23,6 +23,7 @@ let package = Package(
             name: "NetworkKit",
             swiftSettings: [
             .enableUpcomingFeature("StrictConcurrency"),
+            .enableUpcomingFeature("InternalImportsByDefault")
         ]),
         .testTarget(
             name: "NetworkKitTests",
