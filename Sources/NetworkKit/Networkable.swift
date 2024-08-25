@@ -11,7 +11,7 @@ import Foundation
 public protocol Networkable {
     func sendRequest<T: Decodable>(urlStr: String) async throws -> T
     func sendRequest<T: Decodable>(endpoint: EndPoint) async throws -> T
-    func sendRequest<T: Decodable>(endpoint: EndPoint, resultHandler: @escaping (Result<T, NetworkError>) -> Void)
+    func sendRequest<T: Decodable>(endpoint: EndPoint, resultHandler: @Sendable @escaping (Result<T, NetworkError>) -> Void)
     func sendRequest<T: Decodable>(endpoint: EndPoint, type: T.Type) -> AnyPublisher<T, NetworkError>
 }
 
@@ -89,7 +89,7 @@ public final class NetworkService: Networkable {
     }
 
     public func sendRequest<T: Decodable>(endpoint: EndPoint,
-                                          resultHandler: @escaping (Result<T, NetworkError>) -> Void) {
+                                          resultHandler: @Sendable @escaping (Result<T, NetworkError>) -> Void) {
 
         guard let urlRequest = createRequest(endPoint: endpoint) else {
             return
