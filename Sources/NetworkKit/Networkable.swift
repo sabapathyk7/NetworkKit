@@ -5,7 +5,7 @@
 //  Created by kanagasabapathy on 01/01/24.
 //
 
-import Combine
+public import Combine
 import Foundation
 
 public protocol Networkable {
