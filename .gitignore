@@ -1,0 +1,50 @@
+# Xcode
+.DS_Store
+*.xcuserdatad/
+*.xcscmblueprint
+*.xccheckout
+*.xcworkspace/
+*.xcodeproj/
+*.xcuserdata/
+*.xcuserstate
+*.xcuserdatad
+
+# Swift Package Manager
+.swiftpm/xcode/package.xcworkspace/xcuserdata/
+
+# Build artifacts
+build/
+DerivedData/
+*.ipa
+*.app
+*.dSYM.zip
+*.dSYM
+Products/
+tmp/
+.swiftpm
+
+# Logs
+*.log
+
+# Dependency directories
+Carthage/
+Pods/
+
+# Documentation
+*.docset/
+
+# Generated files
+*.generated/
+*.compiled/
+
+# Secrets and environment
+.env
+.env.*
+.secret
+secrets/
+
+# System-specific files
+.idea/
+.vscode/
+*.swp
+*.swo
