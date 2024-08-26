@@ -4,7 +4,7 @@ Elevate your iOS app’s connectivity with NetworkKit – a powerful, modular ne
 
 ### 📖 Full Tutorial
 
-Dive deep into NetworkKit with the [full tutorial on Medium.](https://sabapathy7.medium.com/how-to-create-a-network-layer-for-your-ios-app-623f99161677).
+Dive deep into NetworkKit with the [full tutorial on Medium.](https://sabapathy7.medium.com/how-to-create-a-network-layer-for-your-ios-app-623f99161677)
 
 ### 🚀 Example Usage
 
